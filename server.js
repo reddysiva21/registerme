@@ -10,7 +10,9 @@ var User = require('./models/User.js');
 
 // configuration ================
 
-mongoose.connect('mongodb://localhost/login');     // connect to local mongoDB database on modulus.io
+//mongoose.connect('mongodb://localhost/login');     // connect to local mongoDB database on modulus.io
+mongoose.connect('mongodb://admin:admin@ds053944.mongolab.com:53944/multiversion'); 
+
 
 app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
 app.use(morgan('dev'));                                         // log every request to the console
