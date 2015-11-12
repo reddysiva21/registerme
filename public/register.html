@@ -1,0 +1,85 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="login">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    <title>Login</title>   
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular library-->
+    <script src="core.js"></script><!-- load angular app-->
+    <script src="js/bootstrap.min.js"></script> 
+    <style>
+		body {
+		    background-image: url('../images/picture2.jpg');
+		}
+	</style>
+</head>
+
+<!-- SET THE CONTROLLER AND GET ALL Users -->
+<body ng-controller="mainController" >
+	<div class="col-md-12 graphs">
+	
+	<div class="col-md-4">
+		<h3>Register Now</h3>
+    	<div class="form-bottom">
+            <form role="form" action="" method="post" class="registration-form">
+            	<p>{{ msg }} </p>
+            	<div class="form-group">
+            		<label class="sr-only" for="form-first-name">First Name</label>
+                	<input type="text" ng-model="formData.firstName" placeholder="First Name..." class="form-first-name form-control" id="form-first-name">
+                </div>
+                <div class="form-group">
+            		<label class="sr-only" for="form-first-name">Last Name</label>
+                	<input type="text" ng-model="formData.lastName" placeholder="Last Name..." class="form-first-name form-control" id="form-first-name">
+                </div>
+                <div class="form-group">
+                	<label class="sr-only" for="form-last-name">User Name</label>
+                	<input type="text" ng-model="formData.userName" placeholder="Username..." class="form-last-name form-control" id="form-last-name">
+                </div>
+                <div class="form-group">
+                	<label class="sr-only" for="form-last-name">Password</label>
+                	<input type="password" ng-model="formData.password" placeholder="Password..." class="form-last-name form-control" id="form-last-name">
+                </div>
+                <div class="form-group">
+                	<label class="sr-only" for="form-email">Email</label>
+                	<input type="text" ng-model="formData.email" placeholder="Email..." class="form-email form-control" id="form-email">
+                </div>
+                <button type="submit" class="btn" ng-click="createUser()">Register Me...</button>
+            </form>
+		</div>
+	</div>
+
+    <div class="col-md-6 graphs">
+        <!-- UsersList LIST -->
+        <!-- <div class="xs"> -->
+        	<h3>Registered users: {{ users.length }} </h3>
+        	<div class="table table-condensed" style="table-layout:fixed">
+			  <table class="table table-striped">
+			    <thead>
+			      <tr class="active">
+			        <th>Firstname</th>
+			        <th>Lastname</th>
+			        <th>Username</th>
+			        <th>Email</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr class="success" ng-repeat="user in users">
+			        <td>{{ user.firstName }}</td>
+			        <td>{{ user.lastName }}</td>
+			        <td>{{ user.userName }}</td>
+			        <td>{{ user.email }}</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
+		<!-- </div> -->
+     </div>
+    </div>
+    </body>
+</html>
